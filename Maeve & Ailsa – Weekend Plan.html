@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maeve &amp; Ailsa – Weekend Plan</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#faf8f5;--card:#fff;--text:#222;--muted:#666;--line:#e5e0d8;--warn:#fee2e2;--warnb:#dc2626;
+--dog:#2563eb;--dog-bg:#e3edff;--maeve:#7c3aed;--maeve-bg:#f0e8ff;--ailsa:#0d9488;--ailsa-bg:#dcf5f1;--both:#d97706;--both-bg:#fff0d6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17171a;--card:#222227;--text:#f2f2f2;--muted:#a0a0a8;--line:#35353c;--warn:#3b1a1a;--warnb:#f87171;
+--dog:#60a5fa;--dog-bg:#1b2a47;--maeve:#a78bfa;--maeve-bg:#2b2342;--ailsa:#2dd4bf;--ailsa-bg:#12332f;--both:#fbbf24;--both-bg:#3a2d10}}
+:root[data-theme="dark"]{--bg:#17171a;--card:#222227;--text:#f2f2f2;--muted:#a0a0a8;--line:#35353c;--warn:#3b1a1a;--warnb:#f87171;
+--dog:#60a5fa;--dog-bg:#1b2a47;--maeve:#a78bfa;--maeve-bg:#2b2342;--ailsa:#2dd4bf;--ailsa-bg:#12332f;--both:#fbbf24;--both-bg:#3a2d10}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:640px;margin:0 auto;padding:16px}
+h1{font-size:1.4rem;margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 12px;font-size:.95rem}
+.legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chip{padding:4px 12px;border-radius:99px;font-weight:600;font-size:.9rem;border:2px solid}
+.chip.maeve{background:var(--maeve-bg);border-color:var(--maeve);color:var(--maeve)}
+.chip.ailsa{background:var(--ailsa-bg);border-color:var(--ailsa);color:var(--ailsa)}
+.chip.both{background:var(--both-bg);border-color:var(--both);color:var(--both)}
+.tabs{display:flex;gap:6px;margin-bottom:14px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:6px 0;z-index:2}
+.tabs button{flex:1;padding:10px 0;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:10px;font:inherit;font-weight:600}
+.tabs button[aria-selected="true"]{background:var(--text);color:var(--bg)}
+.info{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:18px;color:var(--muted)}
+.info b{color:var(--text)}
+.section{margin:26px 0 8px;padding-bottom:6px;border-bottom:3px solid var(--text);font-size:1.25rem;font-weight:800}
+.pain{background:var(--warn);border:2px dashed var(--warnb);border-radius:10px;padding:10px 12px;margin:10px 0 4px}
+.pain b{display:block;margin-bottom:2px}
+.pain ul{margin:0;padding-left:20px}
+.sub-h{margin:18px 0 8px;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.sub-h span{font-weight:600;text-transform:none;letter-spacing:0}
+.card{border-left:6px solid;border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.card.maeve{background:var(--maeve-bg);border-color:var(--maeve)}
+.card.ailsa{background:var(--ailsa-bg);border-color:var(--ailsa)}
+.card.both{background:var(--both-bg);border-color:var(--both)}
+.card.note{background:var(--warn);border-color:var(--warnb)}
+.card.dog{background:var(--dog-bg);border-color:var(--dog)}
+.card.dog .t{color:var(--dog)}
+.card.maeve+.card,.card.ailsa+.card,.card.both+.card{margin-top:8px}
+.who{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;opacity:.85}
+.card h3{margin:0 0 2px;font-size:1.05rem}
+.card p{margin:2px 0;font-size:.95rem}
+.card ul{margin:4px 0 0;padding-left:20px;font-size:.95rem}
+.card li{margin:2px 0}
+.map{display:inline-block;margin-top:6px;padding:6px 12px;border-radius:8px;background:var(--card);color:var(--text);border:1px solid var(--line);font-size:.9rem;font-weight:600;text-decoration:none}
+.card .t{font-size:1.6rem;font-weight:800;line-height:1.15;margin-bottom:2px;font-variant-numeric:tabular-nums}
+.card.maeve .t{color:var(--maeve)}.card.ailsa .t{color:var(--ailsa)}.card.both .t{color:var(--both)}
+.sub-h span{font-size:1.05rem;font-weight:800;color:var(--text);text-transform:none;letter-spacing:0;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:2px 8px;margin-left:4px}
+.info{font-size:1.05rem}
+.notes{background:var(--card);border:2px solid var(--text);border-radius:10px;padding:10px 12px;margin-bottom:14px}
+.notes ul{margin:4px 0 0;padding-left:20px}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+</style>
+</head>
+<body>
+<main>
+<h1>Maeve &amp; Ailsa</h1>
+<p class="sub">Thu 8 – Sun 11 October · plan for Liz &amp; Geoff</p>
+<div class="legend"><span class="chip maeve">Maeve</span><span class="chip ailsa">Ailsa</span><span class="chip both">Both</span></div>
+<div class="notes"><b>General notes</b><ul><li>Before taking Ailsa anywhere outside, sit her on the toilet to do a wee wee.</li></ul></div>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div id="day"></div>
+</main>
+<script>
+var N={maeve:"Maeve",ailsa:"Ailsa",both:"Both",note:"Important",dog:"Angie"};
+var TOILET="⚠ Sit Ailsa on the toilet for a wee wee first";
+var PAIN=["Getting shoes on","Doing Maeve's hair"];
+var UP={h:"1. Getting the kids up",cards:[{w:"both",h:"Get the kids up",l:["The kids wake the grandparents up"]}]};
+var DRESS={h:"2. Getting the kids dressed",cards:[{w:"both",t:"By 7:30",h:"Both kids dressed",l:["Dress both kids by 7:30 at the latest","Expect trouble with shoes and Maeve's hair"]}]};
+var ANGIE=["Feed two scoops of dried kibble","Feed her outside, on the leash","Bring her in when she barks"];
+var ANGIE_B={w:"dog",t:"7:15 – 8:15",h:"Breakfast feeding window",l:ANGIE};
+var ANGIE_D={w:"dog",t:"5:00 – 6:00",h:"Dinner feeding window",l:ANGIE};
+function bf(m){return {h:"3. Breakfast",cards:[
+ {w:"maeve",t:"7:15 – 7:45",h:"Breakfast window",l:m},
+ {w:"ailsa",t:"7:15 – 7:45",h:"Breakfast window",l:["Give two Weetabix, with milk"]},
+ ANGIE_B]}}
+var BF=bf(["Give one Weetabix and Cheerios, with milk"]);
+var TEA=function(t,l){return {w:"both",t:t,h:"Tea window",l:l.concat(["Offer a squeezy yoghurt for pudding"])}};
+var WIND={w:"both",t:"6:00 – 7:00",h:"Bedtime wind down window",l:["Put on CBeebies (channel 202)","Put both kids in pyjamas","At 6:45pm, heat Ailsa's milk: 240ml for 30 seconds in the microwave"]};
+var BED={w:"both",t:"About 7:00",h:"Bedtime",l:["Put both girls to bed around 7pm"]};
+var LUNCH={w:"ailsa",t:"11:45 – 12:15",h:"Lunch window",l:["Serve lunch between 11:45 and 12:15"]};
+var NAP={w:"ailsa",t:"After lunch",h:"Nap time",l:["Heat 240ml of milk for 30 seconds straight after lunch","Put Ailsa in a nappy","Read her a book","Put her to bed with the milk"]};
+var SCHOOLKIT={w:"maeve",t:"Before 8:35",h:"Maeve ready for school",l:["Put on uniform, shoes and blue coat","Pack blue folder, school bag and reading book","Pack lunchbox with chopped apple (snack) and water bottle"]};
+var DAYS={
+Thursday:[
+{info:"<b>About 6:25am</b> – Graham &amp; Jill leave."},
+{section:"Morning routine",pain:PAIN,subs:[UP,DRESS,BF,
+ {h:"4. Pre-exit routine",cards:[
+  {w:"ailsa",t:"Before 8:00",h:"Ailsa ready for Inkpots",l:["Put on her shoes","Pack her dodo and blue and white bag"]},
+  SCHOOLKIT]},
+ {h:"5. Exit",cards:[
+  {w:"ailsa",t:"8:00 – 8:30",h:"Inkpots pick-up window",l:["Jen collects Ailsa and drops her at Inkpots","Confirm the drop-off time with Jen",TOILET]},
+  {w:"maeve",t:"By 8:35",h:"Leave for school",m:"https://maps.app.goo.gl/anbt6njoyH6g2vUS8?g_st=ic",l:["Drive 5 minutes to Toreagh Primary","Arrive before the 8:50am bell, or Maeve is marked late"]}]}]},
+{section:"Afternoon",subs:[{h:"",cards:[
+ {w:"maeve",a:1,t:"2:55",h:"Collect Maeve from 2 O'Clock Club",m:"https://maps.app.goo.gl/anbt6njoyH6g2vUS8?g_st=ic",l:["Collect Maeve when the club finishes at 2:55pm","Wait on the pavement outside the school until Maeve is released"]},
+ {w:"ailsa",t:"TBC",h:"Back from Inkpots",l:["Jen brings Ailsa home; time TBC"]}]}]},
+{section:"Evening",subs:[{h:"",cards:[
+ TEA("4:45 – 5:30",["Try Peppa Pigs or beans, toast and shredded cheese"]),ANGIE_D,WIND,BED]}]}
+],
+Friday:[
+{section:"Morning routine",pain:PAIN,subs:[UP,DRESS,BF,
+ {h:"4. Pre-exit routine",cards:[SCHOOLKIT]},
+ {h:"5. Exit",cards:[
+  {w:"maeve",t:"By 8:35",h:"Leave for school",m:"https://maps.app.goo.gl/anbt6njoyH6g2vUS8?g_st=ic",l:["Drive 5 minutes to Toreagh Primary","Arrive before the 8:50am bell, or Maeve is marked late",TOILET]},
+  {w:"ailsa",t:"All day",h:"Ailsa stays with the grandparents",l:["Grandparents look after Ailsa all day"]}]}]},
+{section:"Lunch and nap",subs:[{h:"",cards:[LUNCH,NAP]}]},
+{section:"Afternoon",subs:[{h:"",cards:[
+ {w:"maeve",a:1,t:"1:40",h:"Leave for school pick-up",m:"https://maps.app.goo.gl/anbt6njoyH6g2vUS8?g_st=ic",l:["Collect Maeve at 1:50pm","Wait at the school gate; she runs out","Expect an earlier pick-up than Thursday: no club on Fridays","One grandparent stays home with Ailsa while she naps"]}]}]},
+{section:"Evening",subs:[{h:"",cards:[
+ TEA("4:45 – 5:30",["Try chicken nuggets and waffles in the air fryer, with garden peas"]),ANGIE_D,WIND,BED]}]}
+],
+Saturday:[
+{section:"Morning and midday",subs:[{h:"",cards:[
+ ANGIE_B,
+ {w:"maeve",t:"9:20",h:"Leave for rugby",l:["Dress Maeve in rugby gear, leggings and a jumper","Wrap her up warm; she was cold last week","Arrive for 9:30 and leave time to park","Recommended: one grandparent takes Maeve while the other stays home with Ailsa","Ailsa can come, but one car means no quick exit if she gets cold","⚠ If Ailsa comes, sit her on the toilet for a wee wee first"]},
+ {w:"maeve",t:"9:45 – 10:45",h:"Mini Rugby session",m:"https://maps.app.goo.gl/iVJc8RDBKRqfbGjK8?g_st=ic",l:["Go to Larne RFC (P2 group)","Stay and watch, and hold her water bottle","Try the coffee at the rugby club"]},
+ {w:"ailsa",t:"Morning",h:"Ailsa at home",l:["Walk to the waterfall, or play at home"]},
+ {w:"maeve",t:"After rugby",h:"Home to change",l:["Change Maeve into comfy clothes","Fill her water bottle"]},
+ LUNCH,
+ {w:"maeve",t:"12:15",h:"Gymnastics (Jen takes Maeve)",l:["Jen takes Maeve to Amphitheatre Leisure Centre, Carrickfergus","Jen brings her home","Confirm Jen's pick-up time from the house"]},
+ NAP]}]},
+{section:"Saturday evening",subs:[
+ {h:"",cards:[
+  {w:"ailsa",t:"4:45 – 5:30",h:"Tea window",l:["Give Ailsa her usual tea","Grandparents choose"]},
+  ANGIE_D]},
+ {h:"Takeaway for Maeve and the grandparents",s:"Pick up the food between 6:45 and 7pm for optimum eating time",cards:[
+  {w:"maeve",t:"Option 1",h:"Chinese from Circle K",m:"https://maps.app.goo.gl/YAKsMbfJAvFAf9Sr8?g_st=ic",l:["Phone through between 5:00 and 5:15pm","Allow 1 hour for collection; it can take longer, so order early to avoid the rush","Pay cash only","Order the <b>Munchie Box</b>: chips, chicken balls, ribs and spring rolls","Grandparents choose any extras","Maeve's plate: rice, a chip, a chicken ball, a rib and a spring roll"]},
+  {w:"maeve",t:"Option 2",h:"Carriages pizza",m:"https://maps.app.goo.gl/egUGV7iU8tD7Tf138?g_st=ic",l:["Order between 6:00 and 6:15 (allow 45 minutes)","Pay cash only","Order Maeve a small cheese pizza","Add curly fries"]},
+  {w:"maeve",t:"Option 3",h:"Domino's pizza",m:"https://maps.app.goo.gl/ZRzdRbTDZEShhUbXA?g_st=ic",l:["Order online between 6:15 and 6:25 (allow 20 – 30 minutes)","Choose collection at any time","Order Maeve a small cheese pizza","Add chicken wings"]},
+  {w:"maeve",t:"Option 4",h:"Duos fish and chips",m:"https://maps.app.goo.gl/yF5AzDmR6N8TguXT9?g_st=ic",l:["Order between 6:15 and 6:30 (allow 30 minutes)","Order Maeve her usual: chicken nuggets and chips"]},
+  {w:"note",a:1,h:"Keep the bones away from Angie",l:["Ribs have bones"]}]},
+ {h:"Timings",cards:[
+  {w:"maeve",t:"6:15",h:"Strictly Come Dancing",l:["Turn Strictly on live at 6:15","Carry on watching when the food arrives"]},
+  {w:"ailsa",t:"6:30 – 7:00",h:"Bedtime window",l:["Stay flexible: Strictly starts at 6:15, so bedtime and TV choices may shift","Divide and conquer: bedtime overlaps with food collection","Get Ailsa in her cot before the food arrives","Play the CBeebies Bedtime Story on iPlayer around 6:30 – 6:45pm","Heat her 240ml of milk for 30 seconds in the microwave"]},
+  {w:"maeve",a:1,t:"6:45 – 7:00",h:"Food collection window",l:["Pick up the food in this window for optimum eating time","One grandparent collects; the other puts Ailsa to bed"]},
+  {w:"maeve",t:"After Strictly",h:"Bedtime"}]}
+]}
+],
+Sunday:[
+{section:"Morning",subs:[{h:"Breakfast",cards:BF.cards}]},
+{section:"Midday",subs:[{h:"",cards:[
+ {w:"maeve",t:"9:30 – 9:40",h:"Leave for hockey window",l:["Leave between 9:30 and 9:40","Expect a small, awkward car park","Park on the main road if there is no space",TOILET]},
+ {w:"maeve",t:"10:00 – 11:00",h:"Mini Hockey session",m:"https://maps.app.goo.gl/4YaR1Lxbo4PwTqC9A?g_st=ic",l:["Go to Larne High School pitch","Enter via the Hockey Club, beside Greenland Community Centre","Drop off and collect Maeve pitch-side"]},
+ LUNCH,NAP]}]},
+{info:"<b>About 4pm</b> – Graham &amp; Jill home."}
+]};
+
+var tabs=document.getElementById("tabs"),day=document.getElementById("day");
+function card(c){return '<div class="card '+c.w+'">'+(c.t?'<div class="t">'+c.t+'</div>':'')+'<div class="who">'+N[c.w]+'</div><h3>'+(c.a?'⚠ ':'')+c.h+'</h3>'+(c.l?'<ul>'+c.l.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>':'')+(c.m?'<a class="map" href="'+c.m+'" target="_blank" rel="noopener">📍 Open in Maps</a>':'')+'</div>'}
+function show(d){
+ Array.prototype.forEach.call(tabs.children,function(b){b.setAttribute("aria-selected",b.dataset.d===d)});
+ var items=DAYS[d];
+ if(!items.length){day.innerHTML='<div class="empty">Details coming soon</div>';return}
+ day.innerHTML=items.map(function(i){
+  if(i.info)return '<div class="info">'+i.info+'</div>';
+  return '<div class="section">'+i.section+'</div>'+
+   (i.pain?'<div class="pain"><b>⚠ Pain points</b><ul>'+i.pain.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>':'')+
+   i.subs.map(function(s){return (s.h?'<div class="sub-h">'+s.h+(s.s?' <span>'+s.s+'</span>':'')+'</div>':'')+s.cards.map(card).join('')}).join('');
+ }).join('');
+}
+Object.keys(DAYS).forEach(function(d){
+ var b=document.createElement("button");b.textContent=d.slice(0,3);b.dataset.d=d;b.setAttribute("role","tab");
+ b.onclick=function(){show(d)};tabs.appendChild(b);
+});
+show("Thursday");
+</script>
+</body>
+</html>
